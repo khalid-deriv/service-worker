@@ -23,6 +23,7 @@ const requestNotificationPermission = async () => {
 	if (permission !== "granted") {
 		throw new Error("Permission not granted for Notification");
 	}
+	console.log(permission);
 };
 
 const main = async () => {
@@ -31,7 +32,7 @@ const main = async () => {
 	const permission = await requestNotificationPermission();
 };
 
-window.main = main;
+document.getElementById("permission-btn").addEventListener("click", main);
 
 // const requestNotificationPermission = async () => {
 //     const permission = await window.Notification.requestPermission();
